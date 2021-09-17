@@ -21,4 +21,7 @@ WORKDIR /scripts
 
 RUN chmod 777 ./convertscript.sh
 
-CMD ./convertscript.sh ; sleep infinity
+WORKDIR /
+
+ENTRYPOINT ["tail"]
+CMD ["-f","/dev/null"]
